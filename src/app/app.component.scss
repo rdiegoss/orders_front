@@ -3,10 +3,32 @@ md-sidenav-container.m2app-dark {
 }
 
 md-toolbar {
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  -webkit-animation-iteration-count: 1;
+
   .title {
     position: absolute;
     right: 50%;
   }
+}
+
+.cardFilter {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+}
+
+.cardNew {
+  -webkit-animation-duration: 1.2s;
+  -webkit-animation-delay: 1.2s;
+  -webkit-animation-iteration-count: 1;
+}
+
+.cardTable {
+  -webkit-animation-duration: 1.4s;
+  -webkit-animation-delay: 1.4s;
+  -webkit-animation-iteration-count: 1;
 }
 
 .app-content {

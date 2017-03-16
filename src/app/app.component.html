@@ -1,37 +1,43 @@
 <md-sidenav-container>
 
-  <md-toolbar color="primary">
+  <md-toolbar class="cardTitle animated fadeInDown" color="primary">
     <span class="title">Orders</span>
   </md-toolbar>
   <br>
 
-  <md-card>
-      <md-card-content>
-        <h2 class="example-h2">Get orders from</h2>
-        <md-radio-button (click)="filterByDay()" name="rdButton">Today</md-radio-button>
-        <md-radio-button name="rdButton">This week</md-radio-button>
-        <md-radio-button (click)="getAll()" name="rdButton">All time</md-radio-button>
-      </md-card-content>
-   </md-card>
+  <div class="cardFilter animated fadeInLeft">
+    <md-card>
+        <md-card-content>
+          <h2 class="example-h2">Get orders from</h2>
+          <md-radio-button (click)="filterByDay()" name="rdButton">Today</md-radio-button>
+          <md-radio-button name="rdButton">This week</md-radio-button>
+          <md-radio-button (click)="getAll()" name="rdButton">All time</md-radio-button>
+        </md-card-content>
+    </md-card>
+  </div>
+  <br>
+
+  <div class="cardNew animated fadeInLeft">
+    <md-card>
+        <md-card-content>
+          <h2 class="example-h2">Add new Order</h2>
+          <md-select placeholder="Users" [(ngModel)]="selectedUser">
+          <md-option *ngFor="let user of users" [value]="user.id">{{ user.name }}</md-option>
+          </md-select>
+          <md-select placeholder="Products" [(ngModel)]="selectedProduct">
+            <md-option *ngFor="let product of products" [value]="product.id">{{ product.name }}</md-option>
+          </md-select>
+        <md-input-container>
+          <input [(ngModel)]="selectedQtd" type="number" mdInput placeholder="Quantity" [value]="qtd" />
+        </md-input-container>
+        <button (click)="save()" class="app-button" md-raised-button>Save</button>
+        </md-card-content>
+    </md-card>
+  </div>
    <br>
 
-   <md-card>
-      <md-card-content>
-        <h2 class="example-h2">Add new Order</h2>
-        <md-select placeholder="Users" [(ngModel)]="selectedUser">
-        <md-option *ngFor="let user of users" [value]="user.id">{{ user.name }}</md-option>
-        </md-select>
-        <md-select placeholder="Products" [(ngModel)]="selectedProduct">
-          <md-option *ngFor="let product of products" [value]="product.id">{{ product.name }}</md-option>
-        </md-select>
-       <md-input-container>
-        <input [(ngModel)]="selectedQtd" type="number" mdInput placeholder="Quantity" [value]="qtd" />
-       </md-input-container>
-       <button (click)="save()" class="app-button" md-raised-button>Save</button>
-      </md-card-content>
-   </md-card>
-   <br>
-
- <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="editRow($event)" (deleteConfirm)="deleteRow($event)"></ng2-smart-table>
+  <div class="cardTable animated fadeInLeft">
+    <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="editRow($event)" (deleteConfirm)="deleteRow($event)"></ng2-smart-table>
+  </div>
 
 </md-sidenav-container>
