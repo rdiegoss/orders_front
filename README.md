@@ -6,6 +6,7 @@ Project Order - Front-End
 	$ cd Orders
 	$ npm install
     $ ng serve
+	$ http://localhost:4200
 
 # Description	
 
